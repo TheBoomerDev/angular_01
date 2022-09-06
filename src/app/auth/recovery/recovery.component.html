@@ -1,1 +1,28 @@
-<p>recovery works!</p>
+<div id="hola" class="root" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card fxFlex="50%">
+
+      <mat-card-header>
+        <mat-card-title> Recovery </mat-card-title>
+        <mat-card-subtitle>Recupera tu Contraseña</mat-card-subtitle>
+      </mat-card-header>
+
+        <mat-card-content fxLayout="row" fxLayout.md="column" fxLayoutAlign="space-around center"
+          fxLayoutAlign.md="start center">
+
+          <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Tu Email" [(ngModel)]="email">
+          </mat-form-field>
+
+        </mat-card-content>
+
+        <mat-card-actions fxFlex="100%">
+          <button mat-button type="submit" (click)="doRecovery()">Recovery</button>
+        </mat-card-actions>
+
+      <mat-card-footer>
+        <button mat-flat-button color="primary" (click)="goLogin()">Ir A Login</button>
+      </mat-card-footer>
+
+    </mat-card>
+  </div>

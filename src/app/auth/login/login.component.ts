@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
     ])
   })
 
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
@@ -34,6 +35,17 @@ export class LoginComponent implements OnInit {
       password:"Test1234"
     }
     this.form.patchValue(obj)
+
+    this.form.valueChanges.subscribe((data) => {
+
+      const ctrls = this.form.controls
+      Object.keys(ctrls).forEach((ctrlName)=>{
+        const errors = this.form.get(ctrlName)?.errors || []
+        console.log(ctrlName, errors)
+
+      })
+
+    })
   }
 
 
@@ -41,6 +53,10 @@ export class LoginComponent implements OnInit {
     const values = this.form.value
     console.log('saveForm', values)
 
+  }
+
+   goRecovery =  () =>{
+    this.router.navigate(['/auth/recovery']);
   }
 
 }
