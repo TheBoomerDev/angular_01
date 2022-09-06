@@ -22,6 +22,11 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.maxLength(150)
       ]),
+      password: new FormControl("", [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(150)
+      ])
     }
     return new FormGroup(group)
   }
