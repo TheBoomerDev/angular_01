@@ -8,30 +8,38 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  public formGroup: FormGroup = LoginComponent.initForm();
+  public email:string=''
 
-  constructor() { }
+  public form: FormGroup = new FormGroup({
+    email: new FormControl("user@email.com", [
+      Validators.required,
+      Validators.email,
+      Validators.maxLength(150)
+    ]),
+    password: new FormControl("", [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(150)
+    ])
+  })
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
-    this.formGroup = LoginComponent.initForm();
+
+    const obj = {
+      email: "hola@mundo.com",
+      password:"Test1234"
+    }
+    this.form.patchValue(obj)
   }
 
-  static initForm = (): FormGroup => {
-    const group = {
-      name: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(150)
-      ]),
-      password: new FormControl("", [
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(150)
-      ])
-    }
-    return new FormGroup(group)
-  }
 
   saveForm = () => {
+    const values = this.form.value
+    console.log('saveForm', values)
 
   }
 

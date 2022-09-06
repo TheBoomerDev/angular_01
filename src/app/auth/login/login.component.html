@@ -6,11 +6,11 @@
       <mat-card-subtitle>Logeate para Disfrutar</mat-card-subtitle>
     </mat-card-header>
 
-    <form [formGroup]="formGroup" autocomplete="off" novalidate (ngSubmit)="saveForm()" (keydown.enter)="saveForm()">
+    <form [formGroup]="form" autocomplete="off" novalidate
+          (ngSubmit)="saveForm()" (keydown.enter)="saveForm()">
 
       <mat-card-content fxLayout="row" fxLayout.md="column" fxLayoutAlign="space-around center"
         fxLayoutAlign.md="start center">
-
 
         <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
           <mat-label>Email</mat-label>
@@ -26,7 +26,7 @@
 
       <mat-card-actions fxFlex="100%">
         <button mat-button>LIKE</button>
-        <button mat-button type="submit" [disabled]="!formGroup.valid">Login</button>
+        <button mat-button type="submit" [disabled]="!form.valid">Login</button>
       </mat-card-actions>
 
     </form>
