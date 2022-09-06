@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/common/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public email:string=''
 
   public form: FormGroup = new FormGroup({
     email: new FormControl("user@email.com", [
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     ])
   })
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private service:AuthService) {
 
   }
 
@@ -48,11 +48,11 @@ export class LoginComponent implements OnInit {
     })
   }
 
-
   saveForm = () => {
     const values = this.form.value
     console.log('saveForm', values)
-
+    this.service.login(values)
+    this.router.navigate(['/admin'])
   }
 
    goRecovery =  () =>{
