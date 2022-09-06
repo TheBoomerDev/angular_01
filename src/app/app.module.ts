@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from './common/shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { InicioComponent } from './inicio/inicio.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

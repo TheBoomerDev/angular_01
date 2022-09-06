@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from '../common/shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { RegisterComponent } from './register/register.component';
 
-import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    FlexLayoutModule,
-    MatCardModule
+    SharedModule
   ],
   bootstrap: [AuthComponent]
 })
