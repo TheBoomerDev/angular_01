@@ -9,18 +9,23 @@
     <form [formGroup]="form" autocomplete="off" novalidate
           (ngSubmit)="saveForm()" (keydown.enter)="saveForm()">
 
-      <mat-card-content fxLayout="row" fxLayout.md="column" fxLayoutAlign="space-around center"
-        fxLayoutAlign.md="start center">
+      <mat-card-content fxLayout="row" fxLayout.md="column"
+        fxLayoutGap="5"
+          fxLayoutAlign="center center" fxLayoutAlign.md="start center">
 
-        <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" placeholder="Tu Email" formControlName="email">
-        </mat-form-field>
+        <div class="email" fxFlex="50%" fxFlex.md="100%">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Tu Email" formControlName="email">
+          </mat-form-field>
+        </div>
 
-        <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" name="password" placeholder="password" formControlName="password">
-        </mat-form-field>
+        <div class="email" fxFlex="50%" fxFlex.md="100%">
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" placeholder="password" formControlName="password">
+          </mat-form-field>
+        </div>
 
       </mat-card-content>
 
