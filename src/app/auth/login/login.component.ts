@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     ])
   })
 
-  constructor(private router: Router, private service:AuthService) {
+  constructor(private router: Router, private service: AuthService) {
 
   }
 
@@ -32,14 +32,14 @@ export class LoginComponent implements OnInit {
 
     const obj = {
       email: "hola@mundo.com",
-      password:"Test1234"
+      password: "Test1234"
     }
     this.form.patchValue(obj)
 
     this.form.valueChanges.subscribe((data) => {
 
       const ctrls = this.form.controls
-      Object.keys(ctrls).forEach((ctrlName)=>{
+      Object.keys(ctrls).forEach((ctrlName) => {
         const errors = this.form.get(ctrlName)?.errors || []
         console.log(ctrlName, errors)
 
@@ -55,8 +55,12 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/admin'])
   }
 
-   goRecovery =  () =>{
+  goRecovery = () => {
     this.router.navigate(['/auth/recovery']);
+  }
+
+  goRegister = () => {
+    this.router.navigate(['/auth/register']);
   }
 
 }
