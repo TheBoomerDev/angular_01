@@ -10,7 +10,7 @@
         "label":"Historical"
     },
     {
-        "path":"paids",
+        "path":"payment",
         "icon":"fab fa-paypal",
         "label":"Paids"
     }
