@@ -1,5 +1,24 @@
 # TestWeb
 
+## Features
+
+[] User Profile
+    -> Component
+[] CRUD [CREATE, READ, UPDATE, DELETE] Links Shortener
+    -> Module
+        -> List Component
+        -> Modal (C/U) Component
+[] Historically
+    -> Module
+        -> List Component
+        -> Details Component
+[] PayPal Account
+    -> Module
+        -> List Paids
+        -> Details Paid
+        -> Configuration
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server

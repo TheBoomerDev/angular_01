@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div class="root" fxLayout="row" fxLayout.xs="column" fxFlexAlign="start start">
+
+  <div class="menu" fxFlex="10%">
+    <admin-menu></admin-menu>
+  </div>
+
+  <div class="content" fxFlex="90%">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
