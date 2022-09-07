@@ -12,14 +12,4 @@ export class MenuProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  goProfile = (): void =>{
-    this.router.navigate(['/admin/profile', {id:"hola"}])
-  }
-
-  getRouteParam = () => {
-    return {
-      obj:2
-    }
-  }
 }
