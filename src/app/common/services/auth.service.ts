@@ -16,6 +16,9 @@ export class AuthService {
   }
 
   isLoged = ():boolean => {
-    return (localStorage.getItem('currentUser') !== null)
+    const user = localStorage.getItem('currentUser')
+    const check = (user !== null)
+    console.log('User is logged in: ' + user, check)
+    return check
   }
 }
