@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'menu-profile',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  goProfile = (): void =>{
+    this.router.navigate(['/admin/profile', {id:"hola"}])
+  }
+
+  getRouteParam = () => {
+    return {
+      obj:2
+    }
+  }
 }
