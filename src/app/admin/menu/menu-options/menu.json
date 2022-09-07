@@ -1,0 +1,17 @@
+[
+    {
+        "path":"links",
+        "icon":"fas fa-link",
+        "label":"Links"
+    },
+    {
+        "path":"historical",
+        "icon":"fas fa-book",
+        "label":"Historical"
+    },
+    {
+        "path":"paids",
+        "icon":"fab fa-paypal",
+        "label":"Paids"
+    }
+]

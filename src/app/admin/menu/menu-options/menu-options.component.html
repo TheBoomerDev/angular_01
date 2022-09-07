@@ -1,1 +1,9 @@
-<p>Menu Options</p>
+<button mat-raised-button color="secondary"
+    *ngFor="let menuOption of menuOptions"
+    [routerLink]="menuOption.path" >
+
+    <i [class]="menuOption.icon" [id]="menuOption.label" *ngIf="menuOption.icon" ></i>
+
+    {{menuOption.label}}
+
+</button>
