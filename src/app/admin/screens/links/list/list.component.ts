@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LinkService } from 'src/app/common/services/link-service.service';
 
 @Component({
   selector: 'list-links',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:LinkService) { }
 
   ngOnInit(): void {
+    this.service.list().then((data:any)=>{
+
+    }).catch((error:any)=>{
+
+    }).finally(()=>{
+
+    })
   }
 
 }
