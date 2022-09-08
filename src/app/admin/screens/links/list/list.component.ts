@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { LinkService } from 'src/app/common/services/link-service.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { LinkModel } from 'src/app/common/models/link.model';
+import { Service } from '../service.service';
 
 @Component({
   selector: 'list-links',
@@ -8,16 +12,33 @@ import { LinkService } from 'src/app/common/services/link-service.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private service:LinkService) { }
+  items: LinkModel[] = []
+
+  displayedColumns: string[] = ['createdAt', 'code', 'urlOriginal'];
+  dataSource: MatTableDataSource<any> = new MatTableDataSource();
+
+  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
+  @ViewChild(MatSort) sort: MatSort = {} as MatSort;
+
+  constructor(private service: Service) {
+    this.dataSource = new MatTableDataSource(this.items)
+    this.dataSource.sort = this.sort
+    this.dataSource.paginator = this.paginator
+  }
 
   ngOnInit(): void {
-    this.service.list().then((data:any)=>{
+    this.refresh()
+  }
 
-    }).catch((error:any)=>{
+  private refresh = () => {
 
-    }).finally(()=>{
-
+    this.service.list().then((data) => {
+      // Castear
+      this.items = data as LinkModel[]
+    }).catch((error) => {
+      console.error(error)
     })
+
   }
 
 }

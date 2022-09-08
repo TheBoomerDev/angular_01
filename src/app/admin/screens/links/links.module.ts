@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SharedModule } from 'src/app/common/shared/shared.module';
 
 import { LinksRoutingModule } from './links-routing.module';
 import { LinksComponent } from './links.component';
@@ -15,7 +16,8 @@ import { ModalComponent } from './modal/modal.component';
   ],
   imports: [
     CommonModule,
-    LinksRoutingModule
+    LinksRoutingModule,
+    SharedModule
   ],
   bootstrap: [LinksComponent]
 })

@@ -25,7 +25,7 @@ export class AbstractService {
     return this.service.doGet(this.url + '/' + id)
   }
 
-  public edit = (id:string, obj:any) => {
+  public edit = (id:string|undefined, obj:any) => {
     return this.service.doPut(this.url + '/' + id, obj)
   }
 
