@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LinkService } from 'src/app/common/services/link-service.service';
+import { DeleteDialogComponent } from 'src/app/common/shared/delete-dialog/delete-dialog.component';
 import { LinkModel } from './../../../common/models/link.model';
 import { ModalComponent } from './modal/modal.component';
 
@@ -9,7 +10,7 @@ import { ModalComponent } from './modal/modal.component';
 })
 export class Service {
 
-  constructor(private service: LinkService, private dialog:MatDialog) { }
+  constructor(private service: LinkService, private dialog: MatDialog) { }
 
   public list = (): Promise<LinkModel[]> => {
     return new Promise((resolve, reject) => {
@@ -50,28 +51,49 @@ export class Service {
   }
 
   public remove = (item: LinkModel) => {
+
     return new Promise((resolve, reject) => {
-      const id = item._id as string
-      this.service.remove(id).then((data: any) => {
-        console.log('Data', data)
-        resolve(data)
-      }).catch((err: any) => {
-        console.error(err)
-        reject(err)
+
+      const dialog = this.dialog.open(DeleteDialogComponent, {
+        width: "25%",
+        data: {
+          item: item
+        }
       })
+      dialog.disableClose = true
+      dialog.afterClosed().subscribe(removeItem => {
+
+        if (!removeItem) resolve(null)
+
+        const id = item._id as string
+        this.service.remove(id).then((data: any) => {
+          console.log('Data', data)
+          resolve(data)
+        }).catch((err: any) => {
+          console.error(err)
+          reject(err)
+        })
+
+
+      })
+
     })
+
+
+
+
   }
 
   openModal = (item: LinkModel | null, callback: () => void) => {
 
     const dialog = this.dialog.open(ModalComponent, {
-      width:"75%",
-      data:{
-        item:item
+      width: "75%",
+      data: {
+        item: item
       }
     })
 
-    dialog.afterClosed().subscribe(data=>{
+    dialog.afterClosed().subscribe(data => {
       console.log('Data', data)
       callback()
     })

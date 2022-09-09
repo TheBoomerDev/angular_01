@@ -50,6 +50,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 const modulosMaterial: any[] = [
   A11yModule,
@@ -109,7 +110,9 @@ const generalModules: any[] = [
 ]
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    DeleteDialogComponent
+  ],
   imports: [
     ...modulosMaterial,
     ...generalModules
