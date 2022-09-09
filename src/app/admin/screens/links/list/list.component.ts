@@ -17,13 +17,11 @@ export class ListComponent implements OnInit {
   displayedColumns: string[] = ['createdAt', 'code', 'urlOriginal'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
 
-  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
-  @ViewChild(MatSort) sort: MatSort = {} as MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
   constructor(private service: Service) {
-    this.dataSource = new MatTableDataSource(this.items)
-    this.dataSource.sort = this.sort
-    this.dataSource.paginator = this.paginator
+   this.updateTable()
   }
 
   ngOnInit(): void {
@@ -37,7 +35,18 @@ export class ListComponent implements OnInit {
       this.items = data as LinkModel[]
     }).catch((error) => {
       console.error(error)
+    }).finally(() => {
+      this.updateTable()
     })
+
+  }
+
+  private updateTable = () => {
+    this.dataSource = new MatTableDataSource(this.items)
+    this.dataSource.paginator = this.paginator
+  }
+
+  create = () => {
 
   }
 

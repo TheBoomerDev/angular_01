@@ -11,6 +11,13 @@ export class Service {
 
   public list = ():Promise<LinkModel[]> => {
     return new Promise((resolve, reject) => {
+
+      // TODO: FIXME: Quitar esto para que coja de la petición
+      if (true){
+        resolve(LinkModel.getMocks());
+      }
+
+
       this.service.list().then(data=>{
         resolve(data as LinkModel[]);
       }).catch(err=>{
