@@ -1,0 +1,17 @@
+{
+ "login":{
+    "title":"Login",
+    "subtitle":"Logeate para Disfrutar",
+    "form":{
+        "email": "Email",
+        "email_placeholder": "Tu Email",
+        "password":"Password",
+        "password_placeholder":"Password"
+    },
+    "actions":{
+        "register":"No Tengo Cuenta",
+        "login":"Login",
+        "recovery":"No Recuerdo La Pass"
+    }
+ }
+}

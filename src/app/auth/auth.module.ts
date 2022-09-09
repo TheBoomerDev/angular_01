@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../common/shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
@@ -18,7 +19,8 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ],
   bootstrap: [AuthComponent]
 })

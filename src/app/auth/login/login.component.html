@@ -2,8 +2,12 @@
   <mat-card fxFlex="50%">
 
     <mat-card-header>
-      <mat-card-title> Login </mat-card-title>
-      <mat-card-subtitle>Logeate para Disfrutar</mat-card-subtitle>
+      <mat-card-title>
+        {{ 'login.title' | translate }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ 'login.subtitle' | translate }}
+      </mat-card-subtitle>
     </mat-card-header>
 
     <form [formGroup]="form" autocomplete="off" novalidate
@@ -15,29 +19,37 @@
 
         <div class="email" fxFlex="50%" fxFlex.md="100%">
           <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" placeholder="Tu Email" formControlName="email">
+            <mat-label>
+              {{ 'login.form.email' | translate }}
+            </mat-label>
+            <input matInput type="email" placeholder="{{ 'login.form.email_placeholder' | translate }}" formControlName="email">
           </mat-form-field>
         </div>
 
         <div class="email" fxFlex="50%" fxFlex.md="100%">
           <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" name="password" placeholder="password" formControlName="password">
+            <mat-label>
+              {{ 'login.form.password' | translate }}
+            </mat-label>
+            <input matInput type="password" name="password" placeholder="{{ 'login.form.password_placeholder' | translate }}" formControlName="password">
           </mat-form-field>
         </div>
 
       </mat-card-content>
 
       <mat-card-actions fxFlex="100%">
-        <button mat-button type="button" (click)="goRegister()">No Tengo Cuenta</button>
-        <button mat-button type="submit" [disabled]="!form.valid">Login</button>
+        <button mat-button type="button" (click)="goRegister()">
+          {{ 'login.actions.register' | translate }}
+        </button>
+        <button mat-button type="submit" [disabled]="!form.valid">
+          {{ 'login.actions.login' | translate }}
+        </button>
       </mat-card-actions>
 
     </form>
     <mat-card-footer>
       <button mat-flat-button color="primary" (click)="goRecovery()">
-        No Recuerdo La Pass
+        {{ 'login.actions.recovery' | translate }}
       </button>
     </mat-card-footer>
 

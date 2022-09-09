@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { SharedModule } from './common/shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { InicioComponent } from './inicio/inicio.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
