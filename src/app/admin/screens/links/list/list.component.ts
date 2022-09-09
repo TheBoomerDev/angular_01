@@ -14,14 +14,14 @@ export class ListComponent implements OnInit {
 
   items: LinkModel[] = []
 
-  displayedColumns: string[] = ['createdAt', 'code', 'urlOriginal'];
+  displayedColumns: string[] = ['createdAt', 'code', 'urlOriginal', 'actions'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
   constructor(private service: Service) {
-   this.updateTable()
+    this.updateTable()
   }
 
   ngOnInit(): void {
@@ -46,8 +46,24 @@ export class ListComponent implements OnInit {
     this.dataSource.paginator = this.paginator
   }
 
-  create = () => {
+  edit = (item: LinkModel|null) => {
+    // Llamado Listener o Callback
+    const callback = () => {
+      this.refresh()
+    }
+    this.service.openModal(item, callback)
+  }
 
+  create = () => {
+    this.edit(null)
+  }
+
+  delete = (item: LinkModel) => {
+    this.service.remove(item).then((data) => {
+      this.refresh()
+    }).catch((error) => {
+      console.error(error)
+    })
   }
 
 }
