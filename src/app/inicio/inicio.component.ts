@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastService } from '../common/services/common/toast.service';
+
 
 @Component({
   selector: 'app-inicio',
@@ -8,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class InicioComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private toast: ToastService) { }
 
   ngOnInit(): void {
+    this.toast.info('Hola', 'Mundo')
   }
 
   goLogin = () =>{

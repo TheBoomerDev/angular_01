@@ -4,8 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { SharedModule } from './common/shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
@@ -25,6 +25,14 @@ import { InicioComponent } from './inicio/inicio.component';
     SharedModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en'
+    }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      maxOpened: 2,
+      autoDismiss: true,
+      timeOut: 1000,
+      positionClass: 'toast-top-right',
+      progressAnimation: 'decreasing'
     })
   ],
   providers: [],
