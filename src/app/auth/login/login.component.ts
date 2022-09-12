@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/common/services/auth.service';
+import { UserLogin } from './../../common/models/interfaces/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
   }
 
   saveForm = () => {
-    const values = this.form.value
+    const values = this.form.value  as UserLogin
     console.log('saveForm', values)
     this.service.login(values).then((data: any) => {
       this.router.navigate(['/admin'])

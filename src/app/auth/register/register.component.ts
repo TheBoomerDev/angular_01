@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/common/services/auth.service';
+import { UserRegister } from './../../common/models/interfaces/register.interface';
 
 @Component({
   selector: 'app-register',
@@ -49,7 +50,7 @@ export class RegisterComponent implements OnInit {
   }
 
   saveForm = () => {
-    const values = this.form.value
+    const values = this.form.value as UserRegister
     console.log('saveForm', values)
     this.service.register(values).then((data:any)=>{
       if (!data) return
