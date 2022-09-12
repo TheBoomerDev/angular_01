@@ -1,0 +1,1009 @@
+{
+	"info": {
+		"_postman_id": "7f989218-f121-4843-9539-a2ff130396d3",
+		"name": "GFT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "94921"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Activate",
+					"item": [
+						{
+							"name": "Send Active Email - By ID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"60d58cb44c27975e607418fc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth/activate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Send Active Email - By Email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"kaimanden@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/auth/activate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activate User By Token",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/auth/activate/NJj9hh9R6R9fgHLrTDgMRDF3Rn3f8F3d2HbJRbRHGGRH8hm32rnJ",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"activate",
+										"NJj9hh9R6R9fgHLrTDgMRDF3Rn3f8F3d2HbJRbRHGGRH8hm32rnJ"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DeviceToken - Notif",
+					"item": [
+						{
+							"name": "Save DeviceToken",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/auth/deviceToken/PruebaToken",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"deviceToken",
+										"PruebaToken"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove DeviceToken",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/auth/deviceToken/PruebaToken",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"auth",
+										"deviceToken",
+										"PruebaToken"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Registro",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": " application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": " en_US",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Testing User\",\r\n   \"email\":\"ad@ad.ad\",\r\n   \"password\":\"Test5432\",\r\n   \"password_confirm\":\"Test5432\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recovery",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "EJlIUbaTFnmQ5n4ulgPlXZR4Ut0r4deq7CFP-FNDXgwueBVJhrc1kho4JTIoEmmlaQoEEsiNZMbc73r6",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "AWmvhg7CQsCctitObXXXRk-Z7vsYwADg6eXIW1_64l4lojivxWxZh7sAze4U5hSyQ1rhdGESWI5rvxQb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": " application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": " en_US",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"ad@ad.ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"recovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"ad@ad.ad\",\r\n   \"password\":\"Test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(ADMIN) - Resetear Contraseña de un Usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-ACCESS_TOKEN",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/auth/reset/602eb31b782a4732203d8e93",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"reset",
+								"602eb31b782a4732203d8e93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Pass - Pedir Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-ACCESS_TOKEN",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"jorge.parada@ctbarbanza.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/recovery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"recovery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Pass - Render Recovery Confirm",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-ACCESS_TOKEN",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"parada.fernandez.jorge@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/recovery/gLThQM",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"recovery",
+								"gLThQM"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Propio Perfil",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/jorge/Pictures/_logo.png"
+								},
+								{
+									"key": "data",
+									"value": "{\"email\":\"parada.fernandez.jorge@gmail.com\",\"password\":\"Test1234\",\"userName\":\"Developer\",\"name\":\"Jorge\",\"lastName\":\"Parada\",\"country\":\"Spain\",\"phone\":\"+34666111222\" }",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Propio Perfil",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n \"status\": false,\n \"role\": \"editor\",\n \"_id\": \"60bcf15ff0d56473131fcf4b\",\n \"email\": \"jorge.parada@ctbarbanza.com\",\n \"userName\": \"Jorge.Parada\",\n \"name\": \"Jorge\",\n \"lastName\": \"Parada\",\n \"country\": \"bd\",\n \"phone\": \"555555\",\n \"createdAt\": \"2021-06-06T16:01:35.728Z\",\n \"updatedAt\": \"2021-09-15T07:45:06.349Z\",\n \"img\": null,\n \"birth\": \"2021-07-24\",\n \"phonePrefix\": \"23\",\n \"gotStore\": true,\n \"youtubeId\": \"UCjw_5Cm9x4pbU5Z_SUQpyhw\",\n \"username\": \"TestUser02\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/jorge/Pictures/milleumFalcon.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(ADMIN) - Habilitar / Deshabiltiar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/auth/602eb31b782a4732203d8e93",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"602eb31b782a4732203d8e93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/auth/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(ADMIN) - List of All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(ADMIN) - List Customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/auth/customers?page=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(ADMIN) - User Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/auth/602eb0aef00caa24a88ada82",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"602eb0aef00caa24a88ada82"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Links",
+			"item": [
+				{
+					"name": "Historical",
+					"item": [
+						{
+							"name": "Historical",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/link/historical?code=XAXASFFASF&page=1&limit=100&date_min=2022-12-02&date_max=2022-12-02",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"link",
+										"historical"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "XAXASFFASF"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "date_min",
+											"value": "2022-12-02"
+										},
+										{
+											"key": "date_max",
+											"value": "2022-12-02"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primary\":false,\r\n    \"name\":\"Jorge Parada\",\r\n    \"address_1\":\"Calle Prueba, nº1\",\r\n    \"address_2\":\"Prueba 1\",\r\n    \"zipcode\":\"15960\",\r\n    \"city\":\"Ribeira\",\r\n    \"state\":\"Coruña\",\r\n    \"country\":\"Spain\",\r\n    \"phone\":\"+34 620553047\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/link",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"60bfb658919dd46f783ecf0c\",\r\n    \"primary\":false,\r\n    \"name\":\"Jorge Parada\",\r\n    \"address_1\":\"Calle Prueba, nº1\",\r\n    \"address_2\":\"Prueba 1\",\r\n    \"zipcode\":\"15960\",\r\n    \"city\":\"Ribeira\",\r\n    \"state\":\"Coruña\",\r\n    \"country\":\"Spain\",\r\n    \"phone\":\"+34 620553047\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/link",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/link",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Active",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"active\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/link",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Links",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/link?page=1&limit=100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"link"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Historical",
+					"item": [
+						{
+							"name": "Historical",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/payment/historical?code=XAXASFFASF&page=1&limit=100&date_min=2022-12-02&date_max=2022-12-02",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"payment",
+										"historical"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "XAXASFFASF"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "date_min",
+											"value": "2022-12-02"
+										},
+										{
+											"key": "date_max",
+											"value": "2022-12-02"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Invoice",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/payment/invoice?code=XAXASFFASF&page=1&limit=100&date_min=2022-12-02&date_max=2022-12-02",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"payment",
+										"invoice"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "XAXASFFASF"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "date_min",
+											"value": "2022-12-02"
+										},
+										{
+											"key": "date_max",
+											"value": "2022-12-02"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Download Invoice",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/payment/invoice/{{id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"payment",
+										"invoice",
+										"{{id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primary\":false,\r\n    \"name\":\"Jorge Parada\",\r\n    \"address_1\":\"Calle Prueba, nº1\",\r\n    \"address_2\":\"Prueba 1\",\r\n    \"zipcode\":\"15960\",\r\n    \"city\":\"Ribeira\",\r\n    \"state\":\"Coruña\",\r\n    \"country\":\"Spain\",\r\n    \"phone\":\"+34 620553047\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/payment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/payment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "Redirect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/public/link/XXASFAS",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"public",
+								"link",
+								"XXASFAS"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
