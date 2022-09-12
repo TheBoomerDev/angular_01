@@ -1,14 +1,35 @@
 import { Injectable } from '@angular/core';
+import { AbstractService } from './common/abstract-service.service';
+import { BaseService } from './common/base-service.service';
+import { ErrorService } from './common/error.service';
+import { ToastService } from './common/toast.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService extends AbstractService {
 
-  constructor() { }
+  constructor(public override service: BaseService, private toast:ToastService,
+    private error:ErrorService) {
+    super(service);
+    this.url = `${this.url}auth`;
+  }
 
   login = (user: any) => {
-    localStorage.setItem('currentUser', user)
+    return new Promise((resolve, reject) => {
+
+      const url = `${this.url}/login`
+      this.service.doPost(url, user).then((data:any)=>{
+        localStorage.setItem('currentUser', user)
+
+        resolve(data)
+      }).catch((error:any)=>{
+        this.error.checkError(error)
+        reject(error)
+
+      })
+
+    })
   }
 
   logout = () => {

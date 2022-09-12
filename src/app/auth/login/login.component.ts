@@ -51,8 +51,12 @@ export class LoginComponent implements OnInit {
   saveForm = () => {
     const values = this.form.value
     console.log('saveForm', values)
-    this.service.login(values)
-    this.router.navigate(['/admin'])
+    this.service.login(values).then((data: any) => {
+      this.router.navigate(['/admin'])
+    }).catch((err: any) => {
+      console.error(err)
+    })
+
   }
 
   goRecovery = () => {

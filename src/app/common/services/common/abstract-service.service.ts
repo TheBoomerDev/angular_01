@@ -7,7 +7,7 @@ import { BaseService } from './base-service.service';
 })
 export class AbstractService {
 
-  url:string=environment.host+'admin/'
+  url:string=environment.host
 
   constructor(public service:BaseService) { }
 

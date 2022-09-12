@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './common/shared/shared.module';
 import { InicioComponent } from './inicio/inicio.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

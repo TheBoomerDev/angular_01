@@ -14,7 +14,7 @@ export class ToastService {
     const i18Title = this.translate.instant(title);
     const i18Subtitle = this.translate.instant(subtitle);
 
-    this.toast.info(i18Title, i18Subtitle)
+    this.toast.info(i18Subtitle, i18Title)
   }
 
   error = (title:string, subtitle:string) => {
@@ -22,7 +22,7 @@ export class ToastService {
     const i18Title = this.translate.instant(title);
     const i18Subtitle = this.translate.instant(subtitle);
 
-    this.toast.error(i18Title, i18Subtitle)
+    this.toast.error(i18Subtitle, i18Title)
   }
 
 }

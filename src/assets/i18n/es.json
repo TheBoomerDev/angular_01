@@ -1,17 +1,42 @@
 {
- "login":{
-    "title":"Login",
-    "subtitle":"Logeate para Disfrutar",
-    "form":{
-        "email": "Email",
-        "email_placeholder": "Tu Email",
-        "password":"Password",
-        "password_placeholder":"Password"
+  "login": {
+    "title": "Login",
+    "subtitle": "Logeate para Disfrutar",
+    "form": {
+      "email": "Email",
+      "email_placeholder": "Tu Email",
+      "password": "Password",
+      "password_placeholder": "Password"
     },
-    "actions":{
-        "register":"No Tengo Cuenta",
-        "login":"Login",
-        "recovery":"No Recuerdo La Pass"
+    "actions": {
+      "register": "No Tengo Cuenta",
+      "login": "Login",
+      "recovery": "No Recuerdo La Pass"
     }
- }
+  },
+  "error": {
+    "ALREADY_EXIST": "El usuario ya Existe",
+    "ERROR_CREDENTIALS": "Por favor, Vuelve a entrar",
+    "ERROR_PASS_LENGTH": "Contraseña Demasiado Corta",
+    "ERROR_PASS_VALID": "Contraseña No es Valida",
+    "ERROR_SAVING": "Error Guardando Datos",
+    "ERROR_USER_LENGTH": "Nombre Demasiado Corto",
+    "ERROR_USER_REQUIRED": "Hace falta un usuario",
+    "ERROR_USER_VALID": "Usuario no Valido",
+    "FORM_DATA_NOT_VALID": "Datos no Validos",
+    "NOT_CODE": "Hace falta el código",
+    "NOT_FOUND": "No Encontrado",
+    "NOT_FOUND_USER": "No Encontrado",
+    "NOT_STORE_FOUND": "No Encontrado",
+    "NOT_USER_FOUND": "No Encontrado",
+    "NOT_VIDEO_FOUND": "No Encontrado",
+    "NOT_YOURS": "No eres el dueño",
+    "NO_TOKEN": "Por favor, Vuelve a entrar",
+    "PASSWORD_NOT_VALID": "Contraseña No es Valida",
+    "PASSWORD_INCORRECT": "Contraseña No es Valida",
+    "PAGE_NOT_FOUND": "No Encontrado",
+    "TOKEN_NOT_VALID": "Por favor, Vuelve a entrar",
+    "USER_ALREADY_EXIST": "El usuario ya Existe",
+    "USER_NOT_ALLOWED": "No Permitido"
+  }
 }

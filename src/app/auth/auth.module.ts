@@ -20,7 +20,9 @@ import { RegisterComponent } from './register/register.component';
     CommonModule,
     AuthRoutingModule,
     SharedModule,
-    TranslateModule
+    TranslateModule.forRoot({
+      defaultLanguage: 'en'
+    })
   ],
   bootstrap: [AuthComponent]
 })
