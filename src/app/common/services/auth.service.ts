@@ -9,26 +9,35 @@ import { ToastService } from './common/toast.service';
 })
 export class AuthService extends AbstractService {
 
-  constructor(public override service: BaseService, private toast:ToastService,
-    private error:ErrorService) {
+  constructor(public override service: BaseService, private toast: ToastService,
+    private error: ErrorService) {
     super(service);
     this.url = `${this.url}auth`;
   }
 
-  login = (user: any) => {
-    return new Promise((resolve, reject) => {
-
-      const url = `${this.url}/login`
-      this.service.doPost(url, user).then((data:any)=>{
-        localStorage.setItem('currentUser', user)
-
-        resolve(data)
-      }).catch((error:any)=>{
+  private doPost = (url: string, data: any) => {
+    return this.service.doPost(url, data)
+      .catch((error: any) => {
         this.error.checkError(error)
-        reject(error)
-
       })
+  }
 
+  recovery = (email: string) => {
+    const url = `${this.url}/recovery`
+    return this.doPost(url, email)
+  }
+
+  register = (user: any) => {
+    const url = `${this.url}/register`
+    return this.doPost(url, user).then((data: any) => {
+      localStorage.setItem('currentUser', data)
+    })
+  }
+
+  login = (user: any) => {
+    const url = `${this.url}/login`
+    return this.doPost(url, user).then((data: any) => {
+      localStorage.setItem('currentUser', data)
     })
   }
 
@@ -36,7 +45,7 @@ export class AuthService extends AbstractService {
     localStorage.removeItem('currentUser')
   }
 
-  isLoged = ():boolean => {
+  isLoged = (): boolean => {
     const user = localStorage.getItem('currentUser')
     const check = (user !== null)
     console.log('User is logged in: ' + user, check)

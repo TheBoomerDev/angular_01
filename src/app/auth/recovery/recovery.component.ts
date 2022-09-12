@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/common/services/auth.service';
+import { ToastService } from 'src/app/common/services/common/toast.service';
 
 @Component({
   selector: 'app-recovery',
@@ -19,14 +21,23 @@ export class RecoveryComponent implements OnInit {
     ])
   })
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private service: AuthService,
+    private toast:ToastService) { }
 
   ngOnInit(): void {
   }
 
   saveForm = (value:any) => {
     console.log('saveForm', value)
+    this.service.recovery(value).then((data: any) => {
 
+      const titleMsg    = 'recovery.toast_ok_title'
+      const subTitleMsg = 'recovery.toast_ok_subtitle'
+      this.toast.info(titleMsg, subTitleMsg)
+
+    }).catch((err: any) => {
+      console.error(err)
+    })
   }
 
   doRecovery = () => {
