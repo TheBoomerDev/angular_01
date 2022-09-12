@@ -5,4 +5,12 @@ export class User{
     birthdate?: Date; // > 18 años
     status?   : boolean; // Bloqueado O NO
     country?  : string; // https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+
+
+    private pruebaPrivada = (): void => {}
+    pruebaPackage = (): void => {}
+    public pruebaPublic = (): void => {}
+    protected pruebaProtected = (): void => {}
+
+    static pruebaStatic = (): void => {}
 }

@@ -27,14 +27,14 @@ export class AuthService extends AbstractService {
     return this.doPost(url, email)
   }
 
-  register = (user: any) => {
+  register = (user: UserRegister) => {
     const url = `${this.url}/register`
     return this.doPost(url, user).then((data: any) => {
       localStorage.setItem('currentUser', data)
     })
   }
 
-  login = (user: any) => {
+  login = (user: UserLogin) => {
     const url = `${this.url}/login`
     return this.doPost(url, user).then((data: any) => {
       localStorage.setItem('currentUser', data)
