@@ -51,6 +51,8 @@ export class RegisterComponent implements OnInit {
     const values = this.form.value
     console.log('saveForm', values)
     this.service.register(values).then((data:any)=>{
+      if (!data) return
+      console.log('saveForm', data)
       this.router.navigate(['/admin'])
     }).catch((err: any) => {
       console.error(err)
