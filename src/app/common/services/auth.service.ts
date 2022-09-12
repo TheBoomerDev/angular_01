@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { UserRegister } from '../models/interfaces/register.interface';
+import { UserLogin } from '../models/interfaces/user.interface';
 import { AbstractService } from './common/abstract-service.service';
 import { BaseService } from './common/base-service.service';
 import { ErrorService } from './common/error.service';
