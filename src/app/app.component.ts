@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'testWeb';
+
+  version:string = environment.version
 
   constructor(private translate: TranslateService){
     this.translate.use('en');
