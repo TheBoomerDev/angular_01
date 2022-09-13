@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/common/models/user.model';
 
 @Component({
@@ -8,7 +8,9 @@ import { User } from 'src/app/common/models/user.model';
 })
 export class ProfileComponent implements OnInit {
 
-  user:User = new User();
+  @Input() user:User = new User();
+
+  @Output() update = new EventEmitter<User>();
 
   constructor() { }
 
@@ -18,6 +20,13 @@ export class ProfileComponent implements OnInit {
 
   refresh = (): void => {
     this.user = User.generate();
+  }
+
+  updateData = (data:any) => {
+    console.log('updateData', data)
+    this.refresh()
+
+    this.update.emit(data)
   }
 
 }

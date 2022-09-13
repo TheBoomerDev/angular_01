@@ -6,6 +6,9 @@ import { ListComponent } from './list/list.component';
 import { ModalComponent } from './modal/modal.component';
 import { PaymentRoutingModule } from './payment-routing.module';
 import { PaymentComponent } from './payment.component';
+import { ContentComponent } from './list/content/content.component';
+import { FilterComponent } from './list/filter/filter.component';
+import { ItemContentComponent } from './list/content/item-content/item-content.component';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { PaymentComponent } from './payment.component';
     ListComponent,
     DetailComponent,
     ModalComponent,
-    PaymentComponent
+    PaymentComponent,
+    ContentComponent,
+    FilterComponent,
+    ItemContentComponent
   ],
   imports: [
     CommonModule,

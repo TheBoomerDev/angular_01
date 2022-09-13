@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/common/models/user.model';
 
 @Component({
@@ -10,9 +10,15 @@ export class ProfileDataComponent implements OnInit {
 
   @Input() user_profile:User = new User();
 
+  @Output() update = new EventEmitter<User>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  pideActualizar = () => {
+    this.update.emit(this.user_profile)
   }
 
 }

@@ -5,7 +5,10 @@
 
 <div class="contenedor" fxLayout="row" fxLayoutGap="2" fxLayoutAlign="space-around center">
 
-    <profile-data fxFlex="40%" [user_profile]="user"></profile-data>
+    <profile-data fxFlex="40%"
+        [user_profile]="user"
+        (update)="updateData($event)"
+        ></profile-data>
     <profile-pass fxFlex="40%" [dameDatos]="user"></profile-pass>
 
 </div>
