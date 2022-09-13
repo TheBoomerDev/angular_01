@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title-group>
+        <mat-card-title>Usuario </mat-card-title>
+        <mat-card-subtitle>
+            {{user_profile.name}}
+        </mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+        <ul class="dates">
+            <li>{{ user_profile.birthdate | date:'short' }}</li>
+            <li>{{ user_profile.birthdate | date:'medium' }}</li>
+            <li>{{ user_profile.birthdate | date:'long' }}</li>
+            <li>{{ user_profile.birthdate | date }}</li>
+            <li>{{ user_profile.birthdate | date:'dd-MM-yyyy' }}</li>
+        </ul>
+    </mat-card-content>
+    <mat-card-actions align="start">
+
+        <i class="fa fa-arrow-left left" *ngIf="user_profile.status"></i>
+        <i class="fa fa-arrow-right right" *ngIf="!user_profile.status"></i>
+
+        <span class="country">
+            {{user_profile.country | uppercase}}
+        </span>
+
+
+    </mat-card-actions>
+    <mat-card-footer>
+        Footer
+    </mat-card-footer>
+</mat-card>

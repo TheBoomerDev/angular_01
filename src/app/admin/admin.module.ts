@@ -8,6 +8,8 @@ import { MenuOptionsComponent } from './menu/menu-options/menu-options.component
 import { MenuComponent } from './menu/menu.component';
 import { MenuProfileComponent } from './menu/profile/profile.component';
 import { ProfileComponent } from './screens/profile/profile.component';
+import { ProfileDataComponent } from './screens/profile/profile-data/profile-data.component';
+import { ProfilePassComponent } from './screens/profile/profile-pass/profile-pass.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { ProfileComponent } from './screens/profile/profile.component';
     MenuComponent,
     ProfileComponent,
     MenuOptionsComponent,
-    MenuProfileComponent
+    MenuProfileComponent,
+    ProfileDataComponent,
+    ProfilePassComponent
   ],
   imports: [
     CommonModule,
