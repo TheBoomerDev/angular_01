@@ -10,13 +10,13 @@ export class ProfilePassComponent implements OnInit {
 
   usuario:User = new User()
 
-  @Input('user_profile')
-  set user_profile(user:User) {
+  @Input('dameDatos')
+  set dameDatos(user:User) {
     this.usuario = user;
     // Como es una función podemos reacccionar y provocar los cambios que queramos
     console.log('user_profile', user)
   }
-  get user_profile():User {
+  get dameDatos():User {
     return this.usuario
   }
 
