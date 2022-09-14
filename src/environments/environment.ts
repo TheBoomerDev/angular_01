@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
-  host: 'http://localhost:8081/',
+  project:'GFN',
+  host: 'https://localhost:8081/api/',
   version: "0.0.0 (Dev)"
 };

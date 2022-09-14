@@ -4,6 +4,7 @@ import { UserLogin } from '../models/interfaces/user.interface';
 import { AbstractService } from './common/abstract-service.service';
 import { BaseService } from './common/base-service.service';
 import { ErrorService } from './common/error.service';
+import { SessionService } from './common/session.service';
 import { ToastService } from './common/toast.service';
 
 @Injectable({
@@ -11,7 +12,7 @@ import { ToastService } from './common/toast.service';
 })
 export class AuthService extends AbstractService {
 
-  constructor(public override service: BaseService, private toast: ToastService,
+  constructor(private session: SessionService, public override service: BaseService, private toast: ToastService,
     private error: ErrorService) {
     super(service);
     this.url = `${this.url}auth`;
@@ -31,26 +32,21 @@ export class AuthService extends AbstractService {
 
   register = (user: UserRegister) => {
     const url = `${this.url}/register`
-    return this.doPost(url, user).then((data: any) => {
-      localStorage.setItem('currentUser', data)
+    return this.doPost(url, user).then((res: any) => {
+      this.session.save(res.data)
     })
   }
 
   login = (user: UserLogin) => {
     const url = `${this.url}/login`
-    return this.doPost(url, user).then((data: any) => {
-      localStorage.setItem('currentUser', data)
+    return this.doPost(url, user).then((res: any) => {
+      this.session.save(res.data)
     })
   }
 
   logout = () => {
-    localStorage.removeItem('currentUser')
+    this.session.logOut()
   }
 
-  isLoged = (): boolean => {
-    const user = localStorage.getItem('currentUser')
-    const check = (user !== null)
-    console.log('User is logged in: ' + user, check)
-    return check
-  }
+
 }

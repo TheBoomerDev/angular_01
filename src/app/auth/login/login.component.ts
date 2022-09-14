@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
 
       const ctrls = this.form.controls
       Object.keys(ctrls).forEach((ctrlName) => {
+        console.log('FORM', this.form.get(ctrlName))
         const errors = this.form.get(ctrlName)?.errors || []
         console.log(ctrlName, errors)
 
