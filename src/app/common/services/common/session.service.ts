@@ -21,14 +21,22 @@ export class SessionService {
   }
 
   isLoged = (): boolean => {
+
     const token = localStorage.getItem('currentUser')
+    // No tenemos token
     if (!token) return false
 
-
+    // No es un token valido o ha caducado
     if (this.jwtHelper.isTokenExpired(token)) {
       return false
     }
 
+    // Ha caducado la sesión
+    const currentTime = new Date()
+    const expDate = this.jwtHelper.getTokenExpirationDate(token)
+    if (!expDate ||  expDate < currentTime) return false
+
+    // Tenemos datos correctos en el Token
     const payload = this.jwtHelper.decodeToken(token);
     return (payload !== null)
   }
