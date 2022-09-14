@@ -55,6 +55,7 @@ export class SessionService {
         return reject(null);
       }
 
+      debugger
       if (this.jwtHelper.isTokenExpired(token)) {
         return reject(null);
       }

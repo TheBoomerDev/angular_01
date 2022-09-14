@@ -13,16 +13,13 @@ import { ToastService } from './common/toast.service';
 export class AuthService extends AbstractService {
 
   constructor(private session: SessionService, public override service: BaseService, private toast: ToastService,
-    private error: ErrorService) {
-    super(service);
+    public override error: ErrorService) {
+    super(service, error);
     this.url = `${this.url}auth`;
   }
 
   private doPost = (url: string, data: any) => {
     return this.service.doPost(url, data)
-      .catch((error: any) => {
-        this.error.checkError(error)
-      })
   }
 
   recovery = (email: string) => {
@@ -33,14 +30,14 @@ export class AuthService extends AbstractService {
   register = (user: UserRegister) => {
     const url = `${this.url}/register`
     return this.doPost(url, user).then((res: any) => {
-      this.session.save(res.data)
+      this.session.save(res.body.data)
     })
   }
 
   login = (user: UserLogin) => {
     const url = `${this.url}/login`
     return this.doPost(url, user).then((res: any) => {
-      this.session.save(res.data)
+      this.session.save(res.body.data)
     })
   }
 
