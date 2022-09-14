@@ -41,11 +41,16 @@ export class SessionService {
     return (payload !== null)
   }
 
+  getToken = () => {
+    const token = localStorage.getItem('currentUser')
+    return token
+  }
+
   getProfile = async (userToken: string) => {
 
     return new Promise(async (resolve, reject) => {
 
-      const token = localStorage.getItem('currentUser')
+      const token = this.getToken()
       if (!token) {
         return reject(null);
       }
