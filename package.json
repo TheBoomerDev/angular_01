@@ -3,13 +3,13 @@
   "version": "0.09.13.20",
   "scripts": {
     "ng": "ng",
-    "prebuild":"auto-changelog",
+    "prebuild": "auto-changelog",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build  --output-hashing=none",
     "watch": "ng build --watch --configuration stage",
     "prod": "ng build --configuration production --progress --output-hashing=none --optimization=true --aot",
     "test": "ng test",
-    "git":"git add --all && git commit -m \"Mensaje\" && git push"
+    "git": "git add --all && git commit -m \"Mensaje\" && git push"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +38,7 @@
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "auto-changelog": "^2.4.0",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

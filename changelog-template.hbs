@@ -1,0 +1,19 @@
+# Changelog
+Documento de cambios del proyecto y los Commits relacionados en cada versión.
+
+{{#each releases}}
+  ### 【{{niceDate}} 】➤  {{major}}  {{version}} {{#unless major}}#{{/unless}} =>  [{{title}}]({{href}})
+
+  {{#each merges}}
+      - 【MERGE】➤ {{message}}, an {{id}} ➤ ({{shorthash}})
+        {{#if commit.breaking}}> **Breaking change:** {{/if}}
+  {{/each}}
+  {{#each fixes}}
+      - 【FIX】➤ [{{shorthash}}] => {{commit.subject}}
+        {{#if commit.breaking}}> **Breaking change:** {{/if}}
+  {{/each}}
+  {{#each commits}}
+      - [{{shorthash}}] => {{subject}}
+        {{#if commit.breaking}}> **Breaking change:** {{/if}}
+  {{/each}}
+{{/each}}
