@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="user_profile">
     <mat-card-title-group>
         <mat-card-title>Usuario </mat-card-title>
         <mat-card-subtitle>
@@ -6,7 +6,8 @@
         </mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-        <ul class="dates">
+
+        <ul class="dates" *ngIf="user_profile.birthdate">
             <li>{{ user_profile.birthdate | date:'short' }}</li>
             <li>{{ user_profile.birthdate | date:'medium' }}</li>
             <li>{{ user_profile.birthdate | date:'long' }}</li>
@@ -16,11 +17,11 @@
     </mat-card-content>
     <mat-card-actions align="start">
 
-        <i class="fa fa-arrow-left left" *ngIf="user_profile.status"></i>
+        <i class="fa fa-arrow-left left" *ngIf="user_profile?.status"></i>
         <i class="fa fa-arrow-right right" *ngIf="!user_profile.status"></i>
 
         <span class="country">
-            {{user_profile.country | uppercase}}
+            {{user_profile.country || '' | uppercase}}
         </span>
 
 

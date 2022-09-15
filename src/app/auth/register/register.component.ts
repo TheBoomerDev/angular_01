@@ -13,6 +13,11 @@ export class RegisterComponent implements OnInit {
 
   isPasswordChecked: boolean = false
   public form: FormGroup = new FormGroup({
+    name: new FormControl("", [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(255),
+    ]),
     email: new FormControl("user@email.com", [
       Validators.required,
       Validators.email,

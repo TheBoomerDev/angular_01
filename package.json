@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build --watch --configuration stage",
+    "prod": "ng build --configuration production --progress --output-hashing=none --optimization=true --aot",
     "test": "ng test",
-    "git":"git add --all && git commit -m \"&args\" && git push"
+    "git":"git add --all && git commit -m \"Mensaje\" && git push"
   },
   "private": true,
   "dependencies": {

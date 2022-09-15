@@ -2,33 +2,38 @@
   <form [formGroup]="form" autocomplete="off" novalidate
   (ngSubmit)="saveForm()" (keydown.enter)="saveForm()"
   id="hola" class="root" fxLayout="column" fxLayoutAlign="center center">
-  <mat-card fxFlex="50%">
+  <mat-card fxFlex="75%">
 
     <mat-card-header>
       <mat-card-title> Registro </mat-card-title>
       <mat-card-subtitle>Regsitrarte para Disfrutar</mat-card-subtitle>
     </mat-card-header>
 
-
-
-      <mat-card-content fxLayout="row" fxLayout.md="column" fxLayoutGap="5" fxLayoutAlign="center center"
+      <mat-card-content fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="5" fxLayoutAlign="center center"
         fxLayoutAlign.md="start center">
 
-        <div class="email" fxFlex="50%" fxFlex.md="100%">
+        <div class="name" fxFlex="50%" fxFlex.xs="100%">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" placeholder="Tu name" formControlName="name">
+          </mat-form-field>
+        </div>
+
+        <div class="email" fxFlex="50%" fxFlex.xs="100%">
           <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
             <input matInput type="email" placeholder="Tu Email" formControlName="email">
           </mat-form-field>
         </div>
 
-        <div class="email" fxFlex="50%" fxFlex.md="100%">
+        <div class="email" fxFlex="50%" fxFlex.xs="100%">
           <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
             <input matInput type="password" name="password" placeholder="password" formControlName="password">
           </mat-form-field>
         </div>
 
-        <div class="email" fxFlex="50%" fxFlex.md="100%">
+        <div class="email" fxFlex="50%" fxFlex.xs="100%">
           <mat-form-field appearance="fill">
             <mat-label>Confirm Password</mat-label>
             <input matInput type="password" placeholder="password" formControlName="password_confirm">

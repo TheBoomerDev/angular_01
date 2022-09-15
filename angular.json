@@ -66,6 +66,9 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "stage":{
+
             }
           },
           "defaultConfiguration": "production"
