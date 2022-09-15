@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration stage",
     "prod": "ng build --configuration production --progress --output-hashing=none --optimization=true --aot",
     "test": "ng test",
-    "git": "git add --all && git commit -m \"Mensaje\" && git push"
+    "git": "git add --all && git commit -m \"Mensaje\" && git push",
+    "deploy":"amplify push"
   },
   "private": true,
   "dependencies": {

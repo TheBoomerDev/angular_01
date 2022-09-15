@@ -3,6 +3,10 @@ Documento de cambios del proyecto y los Commits relacionados en cada versión.
 
 ### 【15 September 2022 】➤  false   # =>  [Unreleased](https://github.com/TheBoomerDev/angular_01/compare/0.09.13.20...HEAD)
 
+- [5935018] => x
+
+- [1dbafab] => build: :bookmark: Release 0.09.13.20
+
 - [0c8f82b] => feat: :sparkles: ADD AutoChangeLog
 
 - [57979dd] => x

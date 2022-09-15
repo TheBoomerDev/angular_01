@@ -1,0 +1,32 @@
+{
+  "function": {
+    "testweb5dffdd23": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "api": {
+    "backend": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "testweb5dffdd23",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
+    }
+  }
+}
