@@ -3,6 +3,7 @@
   "version": "0.09.13.20",
   "scripts": {
     "ng": "ng",
+    "prebuild":"auto-changelog",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration stage",
@@ -44,5 +45,13 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.4.3"
+  },
+  "auto-changelog": {
+    "output": "Changelog.md",
+    "template": "changelog-template.hbs",
+    "unreleased": true,
+    "commitLimit": false,
+    "sortCommits": "date-desc",
+    "tagPattern": ".+"
   }
 }
